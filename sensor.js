@@ -1,15 +1,11 @@
-let motionData = [];
-
-/*function ClickRequestDeviceSensor(){
+function ClickRequestDeviceSensor(){
     DeviceOrientationEvent.requestPermission().then(function(responce){
         if(responce == 'granted'){
-            window.addEventListener("device")
+            window.addEventListener("deviceorientation",deviceOrientation);
         }
 
     })
-}*/
-
-window.addEventListener("deviceorientation",deviceOrientation,true);
+}
 
 function deviceOrientation(e){
     let bata = e.bata;
