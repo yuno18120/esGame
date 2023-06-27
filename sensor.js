@@ -1,3 +1,5 @@
+//センサー
+
 function ClickRequestDeviceSensor(){
     DeviceOrientationEvent.requestPermission().then(function(responce){
         if(responce == 'granted'){
