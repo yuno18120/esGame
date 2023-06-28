@@ -36,18 +36,13 @@ var isTouch = false;
 var motionData = [];
 var orientationData = [];
 
-//. iOS 13 対応 : https://bagelee.com/webar-vr/ios13-webar-webvr/
-//.             : https://qiita.com/nakakaz11/items/a9be602874bd54819a18
 function ClickRequestDeviceSensor(){
-  //. ユーザーに「許可」を明示させる必要がある
   DeviceOrientationEvent.requestPermission().then( function( response ){
     if( response === 'granted' ){
       window.addEventListener( "deviceorientation", deviceOrientation );
       $('#sensorrequest').css( 'display', 'none' );
       $('#cdiv').css( 'display', 'block' );
     }
-  }).catch( function( e ){
-    console.log( e );
   });
 
   DeviceMotionEvent.requestPermission().then( function( response ){
@@ -56,9 +51,7 @@ function ClickRequestDeviceSensor(){
       $('#sensorrequest').css( 'display', 'none' );
       $('#cdiv').css( 'display', 'block' );
     }
-  }).catch( function( e ){
-    console.log( e );
-  });
+  })
 }
 
 $(function(){
