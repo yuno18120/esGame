@@ -1,15 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>加速度</title>
 </head>
+
 <body>
     <h1 id="t0"></h1>
     <h2 id="t1"></h2>
     <h3 id="t2"></h3>
-    <script src="sensor.js"></script>
+    <script>
+
+        DeviceOrientationEvent.requestPermission().then(function (response) {
+            if (response === 'granted') {
+                window.addEventListener("deviceorientation", deviceOrientation);
+            }
+        });
+
+        DeviceMotionEvent.requestPermission().then(function (response) {
+            if (response === 'granted') {
+                window.addEventListener("devicemotion", deviceMotion);
+            }
+        });
+
+        function deviceOrientation(e) {
+            var ac = e.acceleration;
+            var acg = e.accelerationIncludingGravity;
+            var rot = e.rotationRate;
+        }
+
+        function deviceMotion(e) {
+            var gamma = e.gamma; 
+            var beta = e.beta; 
+            var alpha = e.alpha;
+        }
+
+    </script>
 </body>
+
 </html>
