@@ -1,4 +1,3 @@
-
 window.addEventListener("devicemotion", devicemotion);
 window.addEventListener("deviceorientation", deveceorientation,false);
 
